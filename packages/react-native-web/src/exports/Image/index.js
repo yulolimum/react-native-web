@@ -275,6 +275,7 @@ const Image = forwardRef<ImageProps, *>((props, ref) => {
       ref={ref}
       style={[styles.root, hasTextAncestor && styles.inline, imageSizeStyle, flatStyle]}
     >
+      {createTintColorSVG(tintColor, filterRef.current)}
       <View
         style={[
           styles.image,
@@ -285,7 +286,6 @@ const Image = forwardRef<ImageProps, *>((props, ref) => {
         suppressHydrationWarning={true}
       />
       {hiddenImage}
-      {createTintColorSVG(tintColor, filterRef.current)}
     </View>
   );
 });
